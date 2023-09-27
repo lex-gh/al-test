@@ -1,9 +1,8 @@
 export const useLocalStorage = {
   getStorage() {
-    const { user, userChildren } = JSON.parse(localStorage.getItem("data"));
     return {
-      user,
-      userChildren,
+      user: JSON.parse(localStorage.getItem("data"))?.user,
+      userChildren: JSON.parse(localStorage.getItem("data"))?.userChildren,
     };
   },
 

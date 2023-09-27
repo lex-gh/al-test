@@ -3,6 +3,7 @@ import { useLocalStorage } from "../helpers";
 
 const store = createStore({
   state() {
+    console.log(useLocalStorage.getStorage().user);
     return {
       user: useLocalStorage.getStorage().user ?? {
         name: "",

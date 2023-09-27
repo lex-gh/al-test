@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import router from "../routes";
@@ -35,6 +35,12 @@ const userInfo = computed(() => {
 
 const childInfo = computed(() => {
   return store.state.userChildren;
+});
+
+onMounted(() => {
+  if (!userInfo.value.name && !userInfo.value.age) {
+    router.push({ name: "form" });
+  }
 });
 </script>
 

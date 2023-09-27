@@ -117,7 +117,6 @@ const saveButtonDisabled = computed(() => {
   const validChild = children.value.every(
     (item) => !!item.name.length && !!item.age.length
   );
-  console.log((!userAge.value.length || !userName.value.length) && validChild);
   return !userAge.value.length || !userName.value.length || !validChild;
 });
 
